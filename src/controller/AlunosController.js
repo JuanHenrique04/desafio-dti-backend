@@ -1,5 +1,5 @@
 // import alunosDB from "../models/mockAlunosDb.js"
-import { adicionarAluno, listarAlunos } from "../models/mockAlunosDb.js";
+import { adicionarAluno, listarAlunos } from "../models/alunosModel.js";
 import calculaMedia from "../sevice/alunosService.js";
 
 class AlunosController {
@@ -15,7 +15,7 @@ class AlunosController {
             mediaNotas: notas.reduce((acc, cur) => acc + cur, 0) / notas.length
         };
         adicionarAluno(aluno);
-        return res.status(201).json({message: "Aluno inserido", aluno});
+        return res.status(201).json({message: "Aluno inserido:", aluno});
     }
 
     static getTodos(req, res) {
